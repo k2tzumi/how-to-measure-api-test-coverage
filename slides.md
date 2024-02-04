@@ -56,14 +56,14 @@ katzumi（かつみ）と申します。
 
 ::left::
 
-<img src="https://pbs.twimg.com/profile_images/799890486773170176/KN4gKfS2_400x400.jpg" class="rounded-full w-40 mt-16 mr-12　float-left"/>  
+<div class="float-left">
+<img src="https://pbs.twimg.com/profile_images/799890486773170176/KN4gKfS2_400x400.jpg" class="rounded-full w-40 mr"/>  
+<simple-icons-x /> <a href="https://twitter.com/katzchum">katzchum</a></div>  
 <QRCode width="180" height="180" value="https://twitter.com/katzchum" color="4329B9" image="Logo_of_X.svg" />
-
-<simple-icons-x /> [katzchum](https://twitter.com/katzchum)  
 
 ::right::
 
-<img src="https://avatars.githubusercontent.com/u/1182787?v=4" class="rounded-full w-40 mt-16 mr-12"/>
+<img src="https://avatars.githubusercontent.com/u/1182787?v=4" class="rounded-full w-40 mr-12"/>
 
 <logos-github-octocat /> [k2tzumi](https://github.com/k2tzumi)  
 <simple-icons-zenn /> [katzumi](https://zenn.dev/katzumi)  
@@ -413,8 +413,8 @@ API テスト以外にも適用できます
 # middleware作った
 Laravel の HTTPmiddleware を composer 化
 
-PHPUnit のカバレッジ設定を参照しカバレッジ計測の関数を呼び出す。  
-特定のリクエストヘッダーがある場合カバレッジ取得する  
+PHPUnit のカバレッジ設定を参照し、カバレッジ計測の関数を呼び出す。  
+特定のリクエストヘッダーがある場合にのみリクエスト単位にカバレッジ取得する  
 https://github.com/k2tzumi/laravel-coverage-middleware
 
 <Transform :scale="0.7">
@@ -450,7 +450,7 @@ httpRunner の trace を `true` にする
 ---
 
 # カバレッジ結果
-コードカバレッジを分析できる
+コードカバレッジが見られる
 
 <Transform :scale="0.8">
 
