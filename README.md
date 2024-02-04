@@ -1,4 +1,4 @@
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/k2tzumi/slidev-boilerplate)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/k2tzumi/how-to-measure-api-test-coverage)
 
 # Welcome to [Slidev](https://github.com/slidevjs/slidev)!
 

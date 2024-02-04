@@ -5,23 +5,23 @@ class: text-center
 highlighter: shiki
 lineNumbers: false
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
+    APIテストにおいてのカバレッジは２つの意味を持ちます。２つのカバレッジについて、それぞれ意味とその取得方法について紹介  
 
-  Learn more at [Sli.dev](https://sli.dev)
 drawings:
   persist: false
 transition: slide-left
-title: Welcome to Slidev
+title: APIテストでもカバレッジ測定したい！
 mdc: true
 addons:
   - "@katzumi/slidev-addon-qrcode"
   - "slidev-addon-components"
 ---
 
-# Welcome to Slidev
+# APIテストでもカバレッジ測定したい！
+API テストのカバレッジは２つの意味を持つ
 
-Presentation slides for developers @ v0.0.4
+[PHPerKaigi 2024](https://phperkaigi.jp/2024/)　March 9, 2024.  
+v0.0.1
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -33,7 +33,7 @@ Presentation slides for developers @ v0.0.4
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon:edit />
   </button>
-  <a href="https://github.com/k2tzumi/slidev-boilerplate" target="_blank" alt="GitHub" title="Open in GitHub"
+  <a href="https://github.com/k2tzumi/how-to-measure-api-test-coverage" target="_blank" alt="GitHub" title="Open in GitHub"
     class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
@@ -45,29 +45,30 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 transition: fade-out
+layout: two-cols-header
 ---
 
-# What is Slidev？
+# 自己紹介
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+katzumi（かつみ）と申します。
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+以下のアカウントで活動しています。
 
-<br>
-<br>
+::left::
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+<img src="https://pbs.twimg.com/profile_images/799890486773170176/KN4gKfS2_400x400.jpg" class="rounded-full w-40 mt-16 mr-12　float-left"/>  
+<QRCode width="180" height="180" value="https://twitter.com/katzchum" color="4329B9" image="Logo_of_X.svg" />
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
+<simple-icons-x /> [katzchum](https://twitter.com/katzchum)  
+
+::right::
+
+<img src="https://avatars.githubusercontent.com/u/1182787?v=4" class="rounded-full w-40 mt-16 mr-12"/>
+
+<logos-github-octocat /> [k2tzumi](https://github.com/k2tzumi)  
+<simple-icons-zenn /> [katzumi](https://zenn.dev/katzumi)  
+
+<br />
 
 <style>
 h1 {
@@ -81,360 +82,411 @@ h1 {
 }
 </style>
 
-<!--
-Here is another comment.
--->
 
 ---
-layout: default
+layout: two-cols-header
+transition: fade-out
 ---
 
-# Table of contents
+# お願い
 
-```html
-<Toc minDepth="1" maxDepth="1"></Toc>
-```
+写真撮影、SNS での実況について
 
-<Toc maxDepth="1"></Toc>
+登壇者の励みになるので是非ともご意見やご感想など、フィードバック頂けると助かります mm  
+あとでスライドを公開します
 
----
-transition: slide-up
-level: 2
----
+::left::
 
-# Navigation
+<Transform :scale="2.5">
+　　　🙆‍♀📷<ph-projector-screen-chart-light /><br />
+　　　🙅‍♂📹💸<br />
+　　　🙅📸👨‍👦‍👦<br />
+</Transform>
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+::right::
 
-## Keyboard Shortcuts
+<br />
+<Transform :scale="2">
+<fa6-brands-square-x-twitter />
+</Transform>
+<br />
+<a href="https://twitter.com/search?q=%23phperkaigi%20%23TrackA">#phperkaigi #TrackA</a>
 
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+<!-- 本セッションでは、撮影やSNS拡散を歓迎しています。ご自由に写真を撮影して、XなどのSNSでシェアしてください。 　　
+ただし、以下の点にご注意ください。　　
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+著作権などの法的な問題を避けるために、スライドや登壇者の写真や動画を無断で商用利用しないでください。　　
+他の参加者のプライバシーや迷惑にならないように、撮影や投稿する際には配慮してください。　　
+SNSでシェアする際には、ハッシュタグ「#phperkaigi #TrackA」をつけてください。　　
+これにより、本セッションの関連情報を簡単に検索できるようになります。 -->
 
 ---
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
+layout: fact
+transition: fade-out
 ---
 
-# Code
-
-Use code snippets and get the highlighting directly！[^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="[3, 4]" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
+# APIテスト
+# 書いていますか？　✋
 
 ---
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
-
----
-class: px-20
+layout: fact
+transition: fade-out
 ---
 
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
+# Controllerテスト
+# じゃないよ！　
 
 ---
-preload: false
+layout: fact
+transition: fade-out
 ---
 
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
+# APIテストは
+# いいぞ 👍
 
 ---
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
+layout: fact
+transition: fade-out
 ---
 
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectivness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
+# 突然の宣伝！
 
 ---
-src: ./pages/multiple-entries.md
-hide: false
+transition: fade-out
+layout: two-cols-header
 ---
+
+# APIシナリオテストを書くべき10の理由
+トークしました
+
+::left::
+
+
+https://www.docswell.com/s/katzumi/5EN8N1-10-reasons-to-write-api-scenario-tests
+<img src="https://k2tzumi.github.io/10-reasons-to-write-api-scenario-tests/thumbnail/001.png" class="float-left" />
+
+<QRCode width="80" height="90" value="https://www.docswell.com/s/katzumi/5EN8N1-10-reasons-to-write-api-scenario-tests" color="4329B9" />
+
+::right::
+
+https://youtu.be/iqPsUaqjGGM @YouTube より 
+<Youtube id="iqPsUaqjGGM" />
 
 ---
 layout: center
-class: text-center
 ---
 
-# Learn More
+# 伝えたかったこと
+他に色々あるけれども..
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+<img src="https://k2tzumi.github.io/10-reasons-to-write-api-scenario-tests/thumbnail/023.png" class="h90 shadow" />
+
+---
+layout: fact
+transition: fade-out
+---
+
+# APIテストにとって
+# カバレッジとは？　🤔
+
+---
+
+# カバレッジとは？　
+網羅率。どれだけテストしたかの指標
+
+<blockquote>
+<p>ソフトウェアテストで用いられる「カバレッジ(網羅率)」とは対象のプログラム全体のうち、どこまでテストが実施(網羅)されたかを示す割合のことです。</p>
+<p>テストを実施する際にカバレッジを測定/分析することでソフトウェアの品質を定量的に評価することができます。</p>
+</blockquote>
+<a href="https://www.qbook.jp/column/632.html">ソフトウェアテストのカバレッジ(網羅率)とは｜設定するメリット２つと注意点【ソフトウェア開発・テスト用語 】| Qbook</a> より
+
+---
+transition: fade-out
+---
+
+# APIテストでのテスト観点とは？
+単体テストの観点とは違う
+
+1. エンドポイントの API の Spec 通りか？  
+    * リクエストが正しく受け付けられるか？  
+    * レスポンスが仕様どおりか？  
+2. API をチェーンさせて呼び出して期待通りに動くか？  
+    * 例えば登録 API を呼び出し、発行（レスポンス）されたコードを使って更新 API が呼ばれること
+    * ユースケース観点での動作検証
+
+---
+layout: fact
+transition: slide-up
+---
+
+# APIテストのカバレッジは
+# ２つの意味を持つ！
+サブタイトル回収
+
+---
+
+# ２つのカバレッジ
+テスト観点での優先順位
+
+1. インターフェース上での網羅性
+2. ロジック上での網羅性
+
+---
+
+# <material-symbols-counter-1 />インターフェース上での網羅性
+エンドポイントに対しての網羅率を見る
+
+* OpenAPI Document に対するカバレッジを取得する  
+API 仕様書をテストに組み込む  
+テストのリクエスト内容が正しいか？  
+レスポンスが仕様書通りか？
+
+---
+
+# <material-symbols-counter-1 />インターフェース上での網羅性
+OpenAPI Document に対するカバレッジを取得する
+
+* API シナリオテストツールの runn ならできます！  
+  <Transform :scale="0.6">
+
+  ![runn's coverage execution results](runn_coverage.png)
+
+  </Transform>
+
+---
+transition: fade-out
+---
+
+# <material-symbols-counter-1 />インターフェース上での網羅性
+runn のシナリオは yaml で書きます
+
+<Transform :scale="0.6">
+
+```yaml
+desc: OpenAPIのSpecのカバレッジを広げる
+runners:
+  req:
+    endpoint: https://petstore3.swagger.io/api/v3
+vars:
+  status: "sold"
+steps:
+  findPetsByStatus:
+    desc: "Finds Pets by status"
+    req:
+      /pet/findByStatus?status={{ vars.status }}:
+        get:
+          header:
+            accept: application/json
+    test: |
+      # ステータスコードが200であること
+      current.res.status == 200
+      # ペットのステータスが正しいこと
+      && current.res.body[0].status == vars.status
+  findPetById:
+    desc: "Find pet by ID"
+    req:
+      /pet/{{ steps.findPetsByStatus.res.body[0].id }}:
+        get:
+          header:
+            accept: application/json
+    test: |
+      # ステータスコードが200であること
+      current.res.status == 200
+      # 指定されたIDで取得できること
+      && current.res.body.id == steps.findPetsByStatus.res.body[0].id
+      # ペットのステータスが正しいこと
+      && current.res.body.status == vars.status
+```
+
+</Transform>
+
+---
+layout: image-right
+image: https://source.unsplash.com/collection/94734566/960x1080
+---
+
+# FAQ
+
+もっとくわしく
+
+---
+
+# Q１.　リクエストパラメータの組み合わせは？
+<v-clicks>
+
+エンドポイントだけカバーできればいいの？
+
+
+* 条件網羅 (condition coverage) C1  
+* 複合条件網羅 (multiple condition coverage) C2  
+  
+
+# A1.　組み合わせは見たほうがいい
+がっつりやりたいなら Controller テストの方がいい
+
+* 最低限 Example（すべてのパラメータあり）と必須項目のみ  
+これだけでもやっておくと安心感が違う
+* プロパティベースドテストも良さそう  
+https://github.com/schemathesis/schemathesis  
+
+</v-clicks>
+
+---
+transition: slide-up
+---
+
+# Q2. runn ってどうなの？　
+<v-clicks>
+
+新しいツールなので学習コストが気になるハズ
+
+* Postman とかの違いは？  
+
+# A2. 書き味が良くテストを量産させやすい  
+テキストベースなのでパラメータ違いを別シナリオとしてコピペ量産ができる
+
+* curl のコマンドから、runn new でシナリオとテストを自動生成できる  
+* データ駆動テストもできるよ
+* チュートリアルもあるよ！  
+<a href="https://qiita.com/advent-calendar/2023/runn-tutorial">runn チュートリアル Advent Calendar 2023</a><QRCode width="180" height="180" value="https://qiita.com/advent-calendar/2023/runn-tutorial" color="4329B9" />
+
+</v-clicks>
+
+---
+
+# <material-symbols-counter-2 />ロジック上での網羅性
+ユースケースをどこまでカバー出来ているか？
+
+<v-clicks>
+
+* ユースケース毎にエンドポイント別れていることが大半  
+CRUD で HTTP メソッドが変わる
+* ユースケース内に条件分岐がある場合、単一責任の原則に違反している可能性  
+条件分岐があったとしても、その粒度でカバレッジ漏れが発生することはあまりなくない？
+* テストに対してカバレッジの紐づけはどうする？🤔
+* そもそも `コード` カバレッジで見る意味はあるか？😅
+
+</v-clicks>
+
+---
+layout: end
+transition: fade
+---
+
+# 完
+## ご静聴ありがとうございました
+
+---
+layout: fact
+transition: fade
+---
+
+# ・　・　・　・
+
+---
+layout: fact
+transition: fade
+---
+
+# でもやっぱり見たいですよね？
+
+---
+
+# E2Eでカバレッジを取る方法
+APIテスト以外にも適用できます
+
+* Xdebug を有効にする  
+通常の PHPUnit でコードカバレッジ取得するのと同じ
+* スクリプト実行時にカバレッジ計測の関数を呼び出す [^1] 
+  1. xdebug_start_code_coverage  
+  計測対象の処理を実行する直前に呼び出す
+  2. xdebug_stop_code_coverage  
+  スクリプトが終了する前呼び出す
+  3. xdebug_get_code_coverage  
+  カバレッジをファイル出力する
+* 計測完了後にカバレッジファイルからレポートファイル(HTML)出力
+
+[^1]: auto_prepend_file を利用して処理をフックしても良い
+
+---
+
+# middleware作った
+Laravel の HTTPmiddleware を composer 化
+
+PHPUnit のカバレッジ設定を参照しカバレッジ計測の関数を呼び出す。  
+特定のリクエストヘッダーがある場合カバレッジ取得する  
+https://github.com/k2tzumi/laravel-coverage-middleware
+
+<Transform :scale="0.7">
+
+* インストール方法  
+  ```console
+  $ composer require --dev k2tzumi/laravel-coverage-middleware
+  $ php artisan vendor:publish --provider="K2tzumi\LaravelCoverageMiddleware\Providers\CoverageServiceProvider"
+  $ php artisan coverage:install {group}
+  ```
+* 使い方
+  1. runn でシナリオ作成する  
+httpRunner の trace を `true` にする
+    ```yml {,4} 
+    runners:
+    req:  
+      endpoint: https://petstore3.swagger.io/api/v3
+      trace: true
+    ```
+  2. シナリオ実行する  
+  ```console
+  $ runn run --verbose path/to/**/*.yml  
+  ```
+  3. カバレッジファイルを集計してレポート作成する
+  ```console
+  $ php -d memory_limit=-1 vendor/bin/phpcov merge --html coverage/html storage/coverage  
+  ```
+
+[^1]: 必要に応じて `config/coverage.php` を修正
+
+</Transform>
+
+---
+
+# カバレッジ結果
+コードカバレッジを分析できる
+
+<Transform :scale="0.8">
+
+<img src="phpcov.png" class="h-40 shadow"/>
+
+runn のシナリオの id が表示される
+
+```console
+% runn list --long --id 87996e05872c153740b740b85ceff5b84bcebecd path/to/**/*.yml
+  id:                                       desc:                                if:  steps:  path                     
+-----------------------------------------------------------------------------------------------------------------------
+  87996e05872c153740b740b85ceff5b84bcebecd  OpenAPIのSpecのカバレッジを計測する            1  day19/exec-coverage.yml  
+
+% runn run --scopes run:exec --verbose --id 51672f3b69495f76959c4dc3a295f3a6a958ca2f **/*.yml
+=== OpenAPIのSpecのカバレッジを広げる (day19/open-api-coverage.yml) ... ok
+    --- Finds Pets by status (findPetsByStatus) ... ok
+    --- Find pet by ID (findPetById) ... ok
+
+1 scenario, 0 skipped, 0 failures
+```
+
+id からシナリオとステップを特定し、再実行できる
+
+</Transform>
+
+----
+
+# 参考資料
+
+* リモートホストで動く PHP アプリケーションに対する E2E テストでカバレッジを測定する方法
+https://blog.freedom-man.com/e2e_coverage
+* runn クックブック  
+https://zenn.dev/k1low/books/runn-cookbook
+
+---
+layout: end
+---
+
+# ご静聴ありがとうございました
