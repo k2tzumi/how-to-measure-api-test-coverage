@@ -247,11 +247,7 @@ API 仕様書をテストに組み込む
 OpenAPI Document に対するカバレッジを取得する
 
 * API シナリオテストツールの runn ならできます！  
-  <Transform :scale="0.6">
-
-  ![runn's coverage execution results](runn_coverage.png)
-
-  </Transform>
+<img src="/runn-coverage.png" alt="runn's coverage execution results" class="h-90 shadow" />
 
 ---
 transition: fade-out
@@ -454,7 +450,7 @@ httpRunner の trace を `true` にする
 
 <Transform :scale="0.8">
 
-<img src="phpcov.png" class="h-40 shadow"/>
+<img src="/phpcov.png" class="h-40 shadow"/>
 
 runn のシナリオの id が表示される
 
