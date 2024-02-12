@@ -15,6 +15,7 @@ mdc: true
 addons:
   - "@katzumi/slidev-addon-qrcode"
   - "slidev-addon-components"
+  - "slidev-addon-rabbit"
 ---
 
 # APIテストでもカバレッジ測定したい！
