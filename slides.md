@@ -246,7 +246,7 @@ API 仕様書をテストに組み込む
 # <material-symbols-counter-1 />インターフェース上での網羅性
 OpenAPI Document に対するカバレッジを取得する
 
-* API シナリオテストツールの runn ならできます！  
+* API シナリオテストツールの runn ならできる！  
 <img src="/runn-coverage.png" alt="runn's coverage execution results" class="h-90 shadow" />
 
 ---
