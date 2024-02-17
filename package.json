@@ -7,13 +7,13 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev",
-    "export": "slidev export --with-clicks --with-toc",
+    "export": "slidev export --timeout 60000 --with-clicks --with-toc",
     "export-notes": "slidev export-notes",
     "lint": "textlint slides.md"
   },
   "dependencies": {
     "@katzumi/slidev-addon-qrcode": "^0.0.13",
-    "@slidev/cli": "^0.47.4",
+    "@slidev/cli": "^0.47.5",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
     "slidev-addon-components": "^0.0.1",
