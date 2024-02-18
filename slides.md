@@ -134,14 +134,6 @@ layout: fact
 transition: fade-out
 ---
 
-# Controllerテスト
-# じゃないよ！　
-
----
-layout: fact
-transition: fade-out
----
-
 # APIテストは
 # いいぞ 👍
 
@@ -158,7 +150,7 @@ layout: two-cols-header
 ---
 
 # APIシナリオテストを書くべき10の理由
-トークしました
+昨年トークしました
 
 ::left::
 
@@ -226,39 +218,35 @@ transition: slide-up
 
 ---
 
-# ２つのカバレッジ
-テスト観点での優先順位
+# ２つの網羅性
+テスト観点での優先度順
 
 1. インターフェース上での網羅性
-2. ロジック上での網羅性
+2. ロジック（ユースケース）上での網羅性
 
 ---
 
 # <material-symbols-counter-1 />インターフェース上での網羅性
 エンドポイントに対しての網羅率を見る
 
-* OpenAPI Document に対するカバレッジを取得する  
-API 仕様書をテストに組み込む  
-テストのリクエスト内容が正しいか？  
-レスポンスが仕様書通りか？
+OpenAPI Document に対するカバレッジを取得する  
 
----
+<img src="/runn-coverage.png" alt="runn's coverage execution results" class="h-90 ml-4 shadow" />
 
-# <material-symbols-counter-1 />インターフェース上での網羅性
-OpenAPI Document に対するカバレッジを取得する
 
-* API シナリオテストツールの runn ならできる！  
-<img src="/runn-coverage.png" alt="runn's coverage execution results" class="h-90 shadow" />
+<img src="https://github.com/k2tzumi/zenn/blob/main/images/books/runn-tutorial/coverage-report.png?raw=true" alt="カバレッジコメント" class="absolute right-10 bottom-10 z-10 h-45 shadow" />
+
 
 ---
 transition: fade-out
 ---
 
 # <material-symbols-counter-1 />インターフェース上での網羅性
-runn のシナリオは yaml で書きます
+API シナリオテストツールの runn ならできる！
 
 <Transform :scale="0.6">
 
+yaml でシナリオを書きます
 ```yaml
 desc: OpenAPIのSpecのカバレッジを広げる
 runners:
@@ -298,27 +286,23 @@ steps:
 </Transform>
 
 ---
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/960x1080
+transition: slide-up
+layout: center
 ---
 
-# FAQ
-
-もっとくわしく
-
----
-
-# Q１.　リクエストパラメータの組み合わせは？
-<v-clicks>
-
+# 　Q.リクエストパラメータの組み合わせは？🤔
 エンドポイントだけカバーできればいいの？
 
 
 * 条件網羅 (condition coverage) C1  
 * 複合条件網羅 (multiple condition coverage) C2  
-  
 
-# A1.　組み合わせは見たほうがいい
+---
+transition: fade-out
+layout: center
+---
+
+# A.　組み合わせは検証したほうがいい
 がっつりやりたいなら Controller テストの方がいい
 
 * 最低限 Example（すべてのパラメータあり）と必須項目のみ  
@@ -326,35 +310,42 @@ image: https://source.unsplash.com/collection/94734566/960x1080
 * プロパティベースドテストも良さそう  
 https://github.com/schemathesis/schemathesis  
 
-</v-clicks>
-
 ---
 transition: slide-up
+layout: center
 ---
 
-# Q2. runn ってどうなの？　
-<v-clicks>
+# Q.runn ってどうなの？🤔　
 
 新しいツールなので学習コストが気になるハズ
 
 * Postman とかの違いは？  
 
-# A2. 書き味が良くテストを量産させやすい  
+---
+transition: fade-out
+layout: center
+---
+
+# A.書き味が良くテストを量産させやすい  
 テキストベースなのでパラメータ違いを別シナリオとしてコピペ量産ができる
 
 * curl のコマンドから、runn new でシナリオとテストを自動生成できる  
 * データ駆動テストもできるよ
-* チュートリアルもあるよ！  
-<a href="https://qiita.com/advent-calendar/2023/runn-tutorial">runn チュートリアル Advent Calendar 2023</a><QRCode width="180" height="180" value="https://qiita.com/advent-calendar/2023/runn-tutorial" color="4329B9" />
+* CI Friendly
 
-</v-clicks>
+---
+
+# チュートリアル本作りました　🎉🎉
+
+<Tweet id="1758870210076098610" />
+
 
 ---
 
 # <material-symbols-counter-2 />ロジック上での網羅性
 ユースケースをどこまでカバー出来ているか？
 
-<v-clicks>
+<v-click>
 
 * ユースケース毎にエンドポイント別れていることが大半  
 CRUD で HTTP メソッドが変わる
@@ -363,7 +354,7 @@ CRUD で HTTP メソッドが変わる
 * テストに対してカバレッジの紐づけはどうする？🤔
 * そもそも `コード` カバレッジで見る意味はあるか？😅
 
-</v-clicks>
+</v-click>
 
 ---
 layout: end
@@ -380,17 +371,49 @@ transition: fade
 
 # ・　・　・　・
 
+<v-clicks>
+
+
+# とは言え観測したくなるのはエンジニアの性
+
+</v-clicks>
+
 ---
-layout: fact
 transition: fade
 ---
 
-# でもやっぱり見たいですよね？
+# こんな感じになりました！
+シナリオをトレースした感じでのコードカバレッジ
+
+
+<Transform :scale="0.8">
+
+<img src="/phpcov.png" class="h-40 shadow"/>
+
+runn のシナリオの id が表示される
+
+```console
+% runn list --long --id 87996e05872c153740b740b85ceff5b84bcebecd path/to/**/*.yml
+  id:                                       desc:                                if:  steps:  path                     
+-----------------------------------------------------------------------------------------------------------------------
+  87996e05872c153740b740b85ceff5b84bcebecd  OpenAPIのSpecのカバレッジを計測する            1  day19/exec-coverage.yml  
+
+% runn run --scopes run:exec --verbose --id 51672f3b69495f76959c4dc3a295f3a6a958ca2f **/*.yml
+=== OpenAPIのSpecのカバレッジを広げる (day19/open-api-coverage.yml) ... ok
+    --- Finds Pets by status (findPetsByStatus) ... ok
+    --- Find pet by ID (findPetById) ... ok
+
+1 scenario, 0 skipped, 0 failures
+```
+
+id からシナリオとステップを特定し、再実行できる
+
+</Transform>
 
 ---
 
 # E2Eでカバレッジを取る方法
-API テスト以外にも適用できます
+API テスト以外でも適用できます
 
 * Xdebug を有効にする  
 通常の PHPUnit でコードカバレッジ取得するのと同じ
@@ -446,41 +469,16 @@ httpRunner の trace を `true` にする
 
 ---
 
-# カバレッジ結果
-コードカバレッジが見られる
-
-<Transform :scale="0.8">
-
-<img src="/phpcov.png" class="h-40 shadow"/>
-
-runn のシナリオの id が表示される
-
-```console
-% runn list --long --id 87996e05872c153740b740b85ceff5b84bcebecd path/to/**/*.yml
-  id:                                       desc:                                if:  steps:  path                     
------------------------------------------------------------------------------------------------------------------------
-  87996e05872c153740b740b85ceff5b84bcebecd  OpenAPIのSpecのカバレッジを計測する            1  day19/exec-coverage.yml  
-
-% runn run --scopes run:exec --verbose --id 51672f3b69495f76959c4dc3a295f3a6a958ca2f **/*.yml
-=== OpenAPIのSpecのカバレッジを広げる (day19/open-api-coverage.yml) ... ok
-    --- Finds Pets by status (findPetsByStatus) ... ok
-    --- Find pet by ID (findPetById) ... ok
-
-1 scenario, 0 skipped, 0 failures
-```
-
-id からシナリオとステップを特定し、再実行できる
-
-</Transform>
-
-----
-
-# 参考資料
+# 参考資料＆リンク
 
 * リモートホストで動く PHP アプリケーションに対する E2E テストでカバレッジを測定する方法
 https://blog.freedom-man.com/e2e_coverage
 * runn クックブック  
 https://zenn.dev/k1low/books/runn-cookbook
+* runn チュートリアル  
+https://zenn.dev/katzumi/books/runn-tutorial
+* laravel-coverage-middleware  
+https://github.com/k2tzumi/laravel-coverage-middleware
 
 ---
 layout: end
