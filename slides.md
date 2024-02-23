@@ -156,7 +156,7 @@ transition: fade-out
 # APIシナリオテストを書くべき10の理由
 昨年トークしました
 
-APIシナリオテスト is 何？という方に是非見てほしいです
+API シナリオテスト is 何？という方に是非見てほしいです
  <a href="https://www.docswell.com/s/katzumi/5EN8N1-10-reasons-to-write-api-scenario-tests"><img src="https://k2tzumi.github.io/10-reasons-to-write-api-scenario-tests/thumbnail/001.png" class="h90" /></a>
 
 ---
@@ -164,7 +164,7 @@ transition: fade-out
 ---
 
 # APIシナリオテストを書くべき10の理由
-YouTubeでみれます
+YouTube でみれます
 
 <Youtube id="iqPsUaqjGGM" class="h100 w150" />
 
@@ -251,7 +251,7 @@ OpenAPI Spec に対するカバレッジ
 エンドポイントに対してのカバレッジの見える化
 
 
-APIシナリオテストツールrunnでできる!!  
+API シナリオテストツール runn でできる!!  
 <img src="/runn-coverage.png" alt="runn's coverage execution results" class="h-90 ml-4 shadow" />
 
 
@@ -312,7 +312,7 @@ layout: center
 ---
 
 # A.書き味が良くテストを量産させやすい  
-テスト特化で使えるCLI
+テスト特化で使える CLI
 
 <Transform :scale="1.4">
 
@@ -446,7 +446,7 @@ runn のシナリオの id が表示される
 ---
 
 # runnはトレーサビリティがある
-runnの実行時にカスタムヘッダーを付与することができます
+runn の実行時にカスタムヘッダーを付与できます
 
 id からシナリオとステップが特定し、再実行できる
 ```console
