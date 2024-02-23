@@ -156,7 +156,7 @@ transition: fade-out
 # APIシナリオテストを書くべき10の理由
 昨年トークしました
 
-API シナリオテスト is 何？という方に是非見てほしいです
+API シナリオテスト is 何？という方は是非！
  <a href="https://www.docswell.com/s/katzumi/5EN8N1-10-reasons-to-write-api-scenario-tests"><img src="https://k2tzumi.github.io/10-reasons-to-write-api-scenario-tests/thumbnail/001.png" class="h90" /></a>
 
 ---
@@ -242,7 +242,7 @@ transition: slide-up
 OpenAPI Spec に対するカバレッジ
 
 
-エンドポイントに対しての網羅率を見る!!  
+エンドポイントに対しての網羅率を見る！  
 <img src="/swagger.png" alt="OpenAPI Spec" class="h-90 ml-4 shadow" />
 
 ---
@@ -251,7 +251,7 @@ OpenAPI Spec に対するカバレッジ
 エンドポイントに対してのカバレッジの見える化
 
 
-API シナリオテストツール runn でできる!!  
+API シナリオテストツール runn でできる！  
 <img src="/runn-coverage.png" alt="runn's coverage execution results" class="h-90 ml-4 shadow" />
 
 
@@ -407,19 +407,6 @@ CRUD で HTTP メソッドが変わる
 * ユースケース内に条件分岐がある場合、単一責任の原則に違反している可能性  
 条件分岐があったとしても、その粒度でカバレッジ漏れが発生することはあまりなくない？
 * そもそも `コード` カバレッジで見る意味はあるか？😅
-
-</v-click>
-
----
-layout: end
-transition: fade
----
-
-# おわり？
-
-<v-click>
-
-## なの。。か？
 
 </v-click>
 
