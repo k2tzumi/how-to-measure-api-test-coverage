@@ -22,7 +22,8 @@ addons:
 API テストのカバレッジは２つの意味を持つ
 
 [PHPerKaigi 2024](https://phperkaigi.jp/2024/)　March 9, 2024.  
-v0.0.2
+v0.0.2  
+by @katzumi (かつみ)
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -129,6 +130,10 @@ transition: fade-out
 # APIテスト
 # 書いていますか？　✋
 
+<!-- 会場で手を上げてもらう。
+手を上げた方是非この後の懇親会でお話させてください！ -->
+
+
 ---
 layout: fact
 transition: fade-out
@@ -146,24 +151,22 @@ transition: fade-out
 
 ---
 transition: fade-out
-layout: two-cols-header
 ---
 
 # APIシナリオテストを書くべき10の理由
 昨年トークしました
 
-::left::
+APIシナリオテスト is 何？という方に是非見てほしいです
+ <a href="https://www.docswell.com/s/katzumi/5EN8N1-10-reasons-to-write-api-scenario-tests"><img src="https://k2tzumi.github.io/10-reasons-to-write-api-scenario-tests/thumbnail/001.png" class="h90" /></a>
 
+---
+transition: fade-out
+---
 
-https://www.docswell.com/s/katzumi/5EN8N1-10-reasons-to-write-api-scenario-tests
-<img src="https://k2tzumi.github.io/10-reasons-to-write-api-scenario-tests/thumbnail/001.png" class="float-left" />
+# APIシナリオテストを書くべき10の理由
+YouTubeでみれます
 
-<QRCode width="80" height="90" value="https://www.docswell.com/s/katzumi/5EN8N1-10-reasons-to-write-api-scenario-tests" color="4329B9" />
-
-::right::
-
-https://youtu.be/iqPsUaqjGGM @YouTube より 
-<Youtube id="iqPsUaqjGGM" />
+<Youtube id="iqPsUaqjGGM" class="h100 w150" />
 
 ---
 layout: center
@@ -200,12 +203,17 @@ transition: fade-out
 # APIテストでのテスト観点とは？
 単体テストの観点とは違う
 
+<Transform :scale="1.7">
+
 1. エンドポイントの API の Spec 通りか？  
     * リクエストが正しく受け付けられるか？  
     * レスポンスが仕様どおりか？  
 2. API をチェーンさせて呼び出して期待通りに動くか？  
-    * 例えば登録 API を呼び出し、発行（レスポンス）されたコードを使って更新 API が呼ばれること
+    * 例えば登録 API を呼び出し、発行（レスポンス）された  
+    コードを使って更新 API が呼ばれること
     * ユースケース観点での動作検証
+
+</Transform>
 
 ---
 layout: fact
@@ -221,16 +229,29 @@ transition: slide-up
 # ２つの網羅性
 テスト観点での優先度順
 
+<Transform :scale="2.5">
+
 1. インターフェース上での網羅性
 2. ロジック（ユースケース）上での網羅性
+
+</Transform>
 
 ---
 
 # <material-symbols-counter-1 />インターフェース上での網羅性
-エンドポイントに対しての網羅率を見る
+OpenAPI Spec に対するカバレッジ
 
-OpenAPI Document に対するカバレッジを取得する  
 
+エンドポイントに対しての網羅率を見る!!  
+<img src="/swagger.png" alt="OpenAPI Spec" class="h-90 ml-4 shadow" />
+
+---
+
+# <material-symbols-counter-1 />インターフェース上での網羅性
+エンドポイントに対してのカバレッジの見える化
+
+
+APIシナリオテストツールrunnでできる!!  
 <img src="/runn-coverage.png" alt="runn's coverage execution results" class="h-90 ml-4 shadow" />
 
 
@@ -238,15 +259,76 @@ OpenAPI Document に対するカバレッジを取得する
 
 
 ---
-transition: fade-out
+transition: slide-up
+layout: center
 ---
 
-# <material-symbols-counter-1 />インターフェース上での網羅性
-API シナリオテストツールの runn ならできる！
+# 　Q.リクエストパラメータの組み合わせは？🤔
+エンドポイントだけカバーできればいいの？
 
-<Transform :scale="0.6">
+<Transform :scale="1.8">
 
-yaml でシナリオを書きます
+* 条件網羅 (condition coverage) C1  
+* 複合条件網羅 (multiple condition coverage) C2  
+
+</Transform>
+
+---
+transition: fade-out
+layout: center
+---
+
+# A.　組み合わせは検証したほうがいい
+がっつりやりたいなら Controller テストの方がいい
+
+<Transform :scale="1.4">
+
+* 最低限 Example（すべてのパラメータあり）と必須項目のみ  
+これだけでもやっておくと安心感が違う
+* プロパティベースドテストも良さそう  
+https://github.com/schemathesis/schemathesis  
+
+</Transform>
+
+---
+transition: slide-up
+layout: center
+---
+
+# Q.runn ってどうなの？🤔　
+
+新しいツールなので学習コストが気になるハズ
+
+<Transform :scale="1.8">
+
+* Postman とかの違いは？  
+* テストの書き味は？
+
+</Transform>
+
+---
+transition: fade-out
+layout: center
+---
+
+# A.書き味が良くテストを量産させやすい  
+テスト特化で使えるCLI
+
+<Transform :scale="1.4">
+
+## テキストベースなのでパラメータ違いの
+## 別シナリオをコピペ量産できる！
+
+</Transform>
+
+---
+transition: fade-out
+layout: two-cols
+---
+
+## こんな感じのyaml
+
+
 ```yaml
 desc: OpenAPIのSpecのカバレッジを広げる
 runners:
@@ -267,6 +349,13 @@ steps:
       current.res.status == 200
       # ペットのステータスが正しいこと
       && current.res.body[0].status == vars.status
+```
+
+::right::
+
+## （続き）
+
+```yaml
   findPetById:
     desc: "Find pet by ID"
     req:
@@ -283,56 +372,22 @@ steps:
       && current.res.body.status == vars.status
 ```
 
-</Transform>
-
----
-transition: slide-up
-layout: center
 ---
 
-# 　Q.リクエストパラメータの組み合わせは？🤔
-エンドポイントだけカバーできればいいの？
+# その他runnのメリット
 
-
-* 条件網羅 (condition coverage) C1  
-* 複合条件網羅 (multiple condition coverage) C2  
-
----
-transition: fade-out
-layout: center
----
-
-# A.　組み合わせは検証したほうがいい
-がっつりやりたいなら Controller テストの方がいい
-
-* 最低限 Example（すべてのパラメータあり）と必須項目のみ  
-これだけでもやっておくと安心感が違う
-* プロパティベースドテストも良さそう  
-https://github.com/schemathesis/schemathesis  
-
----
-transition: slide-up
-layout: center
----
-
-# Q.runn ってどうなの？🤔　
-
-新しいツールなので学習コストが気になるハズ
-
-* Postman とかの違いは？  
-
----
-transition: fade-out
-layout: center
----
-
-# A.書き味が良くテストを量産させやすい  
-テキストベースなのでパラメータ違いを別シナリオとしてコピペ量産ができる
+<Transform :scale="1.4">
 
 * curl のコマンドから、runn new でシナリオとテストを自動生成できる  
 * データ駆動テストもできるよ
 * CI Friendly
 
+</Transform>
+
+---
+layout: image-right
+image: https://github.com/k2tzumi/zenn/blob/main/books/runn-tutorial/cover.png?raw=true
+backgroundSize: contain
 ---
 
 # チュートリアル本作りました　🎉🎉
@@ -351,7 +406,6 @@ layout: center
 CRUD で HTTP メソッドが変わる
 * ユースケース内に条件分岐がある場合、単一責任の原則に違反している可能性  
 条件分岐があったとしても、その粒度でカバレッジ漏れが発生することはあまりなくない？
-* テストに対してカバレッジの紐づけはどうする？🤔
 * そもそも `コード` カバレッジで見る意味はあるか？😅
 
 </v-click>
@@ -361,22 +415,21 @@ layout: end
 transition: fade
 ---
 
-# 完
-## ご静聴ありがとうございました
+# おわり？
+
+<v-click>
+
+## なの。。か？
+
+</v-click>
 
 ---
 layout: fact
 transition: fade
 ---
 
-# ・　・　・　・
-
-<v-clicks>
-
-
-# とは言え観測したくなるのはエンジニアの性
-
-</v-clicks>
+# 観測は
+# エンジニアの美徳
 
 ---
 transition: fade
@@ -385,13 +438,17 @@ transition: fade
 # こんな感じになりました！
 シナリオをトレースした感じでのコードカバレッジ
 
-
-<Transform :scale="0.8">
-
-<img src="/phpcov.png" class="h-40 shadow"/>
-
 runn のシナリオの id が表示される
 
+<img src="/phpcov.png" class="h-80 shadow"/>
+
+
+---
+
+# runnはトレーサビリティがある
+runnの実行時にカスタムヘッダーを付与することができます
+
+id からシナリオとステップが特定し、再実行できる
 ```console
 % runn list --long --id 87996e05872c153740b740b85ceff5b84bcebecd path/to/**/*.yml
   id:                                       desc:                                if:  steps:  path                     
@@ -406,9 +463,6 @@ runn のシナリオの id が表示される
 1 scenario, 0 skipped, 0 failures
 ```
 
-id からシナリオとステップを特定し、再実行できる
-
-</Transform>
 
 ---
 
@@ -479,9 +533,3 @@ https://zenn.dev/k1low/books/runn-cookbook
 https://zenn.dev/katzumi/books/runn-tutorial
 * laravel-coverage-middleware  
 https://github.com/k2tzumi/laravel-coverage-middleware
-
----
-layout: end
----
-
-# ご静聴ありがとうございました
