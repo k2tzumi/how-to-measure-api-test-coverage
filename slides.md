@@ -22,7 +22,7 @@ addons:
 API テストのカバレッジは２つの意味を持つ
 
 [PHPerKaigi 2024](https://phperkaigi.jp/2024/)　March 9, 2024.  
-v0.0.2  
+v0.0.3  
 by @katzumi (かつみ)
 
 <div class="pt-12">
