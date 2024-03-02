@@ -159,7 +159,7 @@ transition: fade-out
 ---
 
 # APIシナリオテストを書くべき10の理由
-昨年トークしました
+昨年トークしてきました
 
 API シナリオテスト is 何？という方は是非！
  <a href="https://www.docswell.com/s/katzumi/5EN8N1-10-reasons-to-write-api-scenario-tests"><img src="https://k2tzumi.github.io/10-reasons-to-write-api-scenario-tests/thumbnail/001.png" class="h90" /></a>
@@ -309,7 +309,7 @@ layout: center
 
 <Transform :scale="1.8">
 
-* Postman とかの違いは？  
+* 他のツールとの違いは？  
 * テストの書き味は？
 
 </Transform>
@@ -434,7 +434,7 @@ CRUD で HTTP メソッドが変わる
 * phpunit/php-code-coverage の HTML レポートを出力したい！  
 コードの行単位にカバレッジを見たい！
 * 別プロセスで動いている PHP のカバレッジをとるには？🤔
-* テストに対してカバレッジの紐づけはどうする？🤔
+* テストに対してカバレッジの紐づけるには？🤔
 
 </v-clicks>
 
