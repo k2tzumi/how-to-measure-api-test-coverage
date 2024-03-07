@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.0.4](https://github.com/k2tzumi/how-to-measure-api-test-coverage/compare/v0.0.3...v0.0.4) - 2024-03-07
+- improve by @k2tzumi in https://github.com/k2tzumi/how-to-measure-api-test-coverage/pull/8
+
 ## [v0.0.3](https://github.com/k2tzumi/how-to-measure-api-test-coverage/compare/v0.0.2...v0.0.3) - 2024-02-23
 - Improvements to Feedback by @k2tzumi in https://github.com/k2tzumi/how-to-measure-api-test-coverage/pull/6
 
