@@ -23,7 +23,7 @@ API テストのカバレッジは２つの意味を持つ
 
 [PHPerKaigi 2024](https://phperkaigi.jp/2024/)　March 9, 2024.  
 v0.0.3  
-by @katzumi (かつみ)
+@katzumi (かつみ)
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -53,6 +53,11 @@ layout: two-cols-header
 # 自己紹介
 
 katzumi（かつみ）と申します。
+
+「障害のない社会をつくる」をビジョンに掲げている「りたりこ」という会社に所属しています
+<a href="https://litalico.co.jp/">
+<img src="https://litalico.co.jp/ogp.png" class="w-40" />
+</a>
 
 以下のアカウントで活動しています。
 
@@ -131,7 +136,7 @@ transition: fade-out
 # 書いていますか？　✋
 
 <!-- 会場で手を上げてもらう。
-手を上げた方是非この後の懇親会でお話させてください！ -->
+手を上げた方この後の懇親会で是非お話させてください！ -->
 
 
 ---
@@ -154,7 +159,7 @@ transition: fade-out
 ---
 
 # APIシナリオテストを書くべき10の理由
-昨年トークしました
+昨年トークしてきました
 
 API シナリオテスト is 何？という方は是非！
  <a href="https://www.docswell.com/s/katzumi/5EN8N1-10-reasons-to-write-api-scenario-tests"><img src="https://k2tzumi.github.io/10-reasons-to-write-api-scenario-tests/thumbnail/001.png" class="h90" /></a>
@@ -175,7 +180,7 @@ layout: center
 # 伝えたかったこと
 他に色々あるけれども..
 
-<img src="https://k2tzumi.github.io/10-reasons-to-write-api-scenario-tests/thumbnail/023.png" class="h90 shadow" />
+<img src="https://k2tzumi.github.io/10-reasons-to-write-api-scenario-tests/thumbnail/023.png" class="container w-190 object-center shadow object-cover" />
 
 ---
 layout: fact
@@ -203,14 +208,16 @@ transition: fade-out
 # APIテストでのテスト観点とは？
 単体テストの観点とは違う
 
-<Transform :scale="1.7">
+<Transform :scale="1.4">
 
-1. エンドポイントの API の Spec 通りか？  
-    * リクエストが正しく受け付けられるか？  
-    * レスポンスが仕様どおりか？  
-2. API をチェーンさせて呼び出して期待通りに動くか？  
-    * 例えば登録 API を呼び出し、発行（レスポンス）された  
-    コードを使って更新 API が呼ばれること
+1. エンドポイントの仕様の正確性を確認  
+    * エンドポイントは API の仕様通りに実装されているかを確認
+    * リクエストが正しく受け付けられているかどうかを検証  
+    * レスポンスが仕様通りに返されているかを確認  
+2. API チェーンの検証  
+    * API を連鎖させて呼び出すことで、期待通りに動作するかを確認  
+    * 例えば、登録 API を呼び出し、そのレスポンスに含まれる  
+    コードを使用して更新 API が呼ばれることを確認  
     * ユースケース観点での動作検証
 
 </Transform>
@@ -220,7 +227,8 @@ layout: fact
 transition: slide-up
 ---
 
-# APIテストのカバレッジは
+# APIテストの
+# カバレッジは
 # ２つの意味を持つ！
 サブタイトル回収
 
@@ -279,7 +287,7 @@ layout: center
 ---
 
 # A.　組み合わせは検証したほうがいい
-がっつりやりたいなら Controller テストの方がいい
+がっつりやるなら Controller テストの方がいい
 
 <Transform :scale="1.4">
 
@@ -301,7 +309,7 @@ layout: center
 
 <Transform :scale="1.8">
 
-* Postman とかの違いは？  
+* 他のツールとの違いは？  
 * テストの書き味は？
 
 </Transform>
@@ -312,7 +320,7 @@ layout: center
 ---
 
 # A.書き味が良くテストを量産させやすい  
-テスト特化で使える CLI
+テスト内容をコード・レビューができる
 
 <Transform :scale="1.4">
 
@@ -367,7 +375,8 @@ steps:
       # ステータスコードが200であること
       current.res.status == 200
       # 指定されたIDで取得できること
-      && current.res.body.id == steps.findPetsByStatus.res.body[0].id
+      && current.res.body.id == 
+           steps.findPetsByStatus.res.body[0].id
       # ペットのステータスが正しいこと
       && current.res.body.status == vars.status
 ```
@@ -400,40 +409,52 @@ backgroundSize: contain
 # <material-symbols-counter-2 />ロジック上での網羅性
 ユースケースをどこまでカバー出来ているか？
 
-<v-click>
+<Transform :scale="1.8">
 
 * ユースケース毎にエンドポイント別れていることが大半  
 CRUD で HTTP メソッドが変わる
-* ユースケース内に条件分岐がある場合、単一責任の原則に違反している可能性  
-条件分岐があったとしても、その粒度でカバレッジ漏れが発生することはあまりなくない？
-* そもそも `コード` カバレッジで見る意味はあるか？😅
+
+<v-click>
+
+　→　エンドポイントのカバレッジで事足りるが..
 
 </v-click>
 
+</Transform>
+
 ---
-layout: fact
+
+# コードカバレッジまで見たいか？
+ユースケース内の条件分岐とか..
+
+<Transform :scale="1.8">
+
+<v-clicks>
+
+* phpunit/php-code-coverage の HTML レポートを出力したい！  
+コードの行単位にカバレッジを見たい！
+* 別プロセスで動いている PHP のカバレッジをとるには？🤔
+* テストに対してカバレッジの紐づけるには？🤔
+
+</v-clicks>
+
+</Transform>
+
+---
 transition: fade
 ---
 
-# 観測は
-# エンジニアの美徳
-
----
-transition: fade
----
-
-# こんな感じになりました！
-シナリオをトレースした感じでのコードカバレッジ
+# こんな感じで見える化👀
+phpunit/php-code-coverage での出力結果
 
 runn のシナリオの id が表示される
 
 <img src="/phpcov.png" class="h-80 shadow"/>
 
-
 ---
 
-# runnはトレーサビリティがある
-runn の実行時にカスタムヘッダーを付与できます
+# runnにはトレーサビリティがある！
+runn はリクエストにカスタムヘッダーを付与できる
 
 id からシナリオとステップが特定し、再実行できる
 ```console
@@ -450,10 +471,10 @@ id からシナリオとステップが特定し、再実行できる
 1 scenario, 0 skipped, 0 failures
 ```
 
-
 ---
 
-# E2Eでカバレッジを取る方法
+# リモートホストで動くPHPアプリケーションの
+# カバレッジ取得方法
 API テスト以外でも適用できます
 
 * Xdebug を有効にする  
