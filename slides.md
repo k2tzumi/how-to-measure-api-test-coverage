@@ -327,7 +327,7 @@ API シナリオテストツール runn でできる！
 <img src="https://github.com/k2tzumi/zenn/blob/main/images/books/runn-tutorial/coverage-report.png?raw=true" alt="カバレッジコメント" class="absolute right-10 bottom-10 z-10 h-45 shadow" />
 
 <!--
-図の用にエンドポイントに対してカバーしているテストケース数をカウントしてカバレッジ率を計算します。  
+図の様にエンドポイントに対してカバーしているテストケース数をカウントしてカバレッジ率を計算します。  
 こちらはAPIシナリオテストツールのrunnを使うことで簡単にできます。  
 １つ目のカバレッジを見れるようになりましたが、次のスライドにある様な疑問が出てきます、、
 -->
@@ -469,7 +469,7 @@ steps:
 ```
 
 <!--
-こんなyamlで書けます！
+ここでは詳しく説明しないですが、こんなyamlで書けます！
 -->
 
 ---
@@ -624,8 +624,8 @@ API テスト以外でも適用できます
 <!--
 Xdebugを使う感じになります。  
 こちらに記載した通りにゴニョゴニョすればできます。  
-本日きんじょうひできさんがphp-code-coverageについて神トークされていたので是非！  
-https://fortee.jp/phperkaigi-2024/proposal/8543c51c-7e06-45d5-a216-cba29cb29789  
+詳しくは本日きんじょうひできさんがphp-code-coverageについて神トークされていたのでオススメです！  
+https://fortee.jp/phperkaigi-2024/proposal/8543c51c-7e06-45d5-a216-cba29cb29789
 -->
 
 ---
