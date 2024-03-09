@@ -63,7 +63,7 @@ katzumi（かつみ）と申します。
 ::left::
 
 <div class="float-left">
-<img src="https://pbs.twimg.com/profile_images/799890486773170176/KN4gKfS2_400x400.jpg" class="rounded-full w-40 mr"/>  
+<img src="https://pbs.twimg.com/profile_images/1764238086572253184/FxgJkwUL_400x400.jpg" class="rounded-full w-40 mr"/>  
 <simple-icons-x /> <a href="https://twitter.com/katzchum">katzchum</a></div>  
 <QRCode width="180" height="180" value="https://twitter.com/katzchum" color="4329B9" image="Logo_of_X.svg" />
 
@@ -121,7 +121,7 @@ transition: fade-out
 <fa6-brands-square-x-twitter />
 </Transform>
 <br />
-<a href="https://twitter.com/search?q=%23phperkaigi%20%23TrackA">#phperkaigi #TrackA</a>
+<a href="https://twitter.com/search?q=%23phperkaigi%20%23a">#phperkaigi #a</a>
 
 <!--
 後でスライド公開します  
